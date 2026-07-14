@@ -33,6 +33,17 @@ export const focaccias = [
   { name: "Ajo", image: garlicFocaccia },
 ];
 
+export const popcornFlavors = [
+  { name: "Mantequilla", icon: "🧈", note: "Clásicas y doraditas", tone: "teal" },
+  { name: "Queso", icon: "🧀", note: "Intensas y cremosas", tone: "cheese" },
+  { name: "Hot Nuts", icon: "🥜", note: "Cacahuate con picante", tone: "nuts" },
+  { name: "Mango", icon: "🥭", note: "Dulce con un giro", tone: "mango" },
+  { name: "Flaming Hot", icon: "🌶️", note: "Para valientes", tone: "flaming" },
+  { name: "Chips Jalapeño", icon: "🫑", note: "Crujientes y verdes", tone: "jalapeno" },
+  { name: "Caramelo", icon: "🍮", note: "Dulces y crujientes", tone: "caramel" },
+  { name: "Chile Limón", icon: "🍋", note: "Ácidas y picositas", tone: "lime" },
+];
+
 export const locations = [
   { name: "Filomena Bazar", image: filomenaCard, mapUrl: "https://maps.google.com/?q=Juan+Ruiz+de+Alarcon+9+Cuernavaca" },
   { name: "Mom’s and Pop’s", image: momsCard, mapUrl: "https://maps.google.com/?q=Pasaje+Comercial+Florencia+Cuernavaca" },

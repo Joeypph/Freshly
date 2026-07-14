@@ -11,10 +11,6 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const finishLoading = useCallback(() => setIsLoading(false), []);
 
-  if (isLoading) {
-    return <KitchenSmoke onComplete={finishLoading} duration={3900} />;
-  }
-
   return (
     <>
       <Hero />
@@ -22,10 +18,11 @@ export default function App() {
       <Story />
       <WaveDivider from="#fffdf8" to="#f7f1e5" variant="rolling" />
       <MenuSection />
-      <WaveDivider from="#fffdf8" to="#4e711c" variant="dramatic" flip />
+      <WaveDivider from="#f8f1d8" to="#4e711c" variant="dramatic" flip />
       <Locations />
       <WaveDivider from="#4e711c" to="#fffdf8" variant="gentle" />
       <Footer />
+      {isLoading && <KitchenSmoke onComplete={finishLoading} duration={4600} />}
     </>
   );
 }
