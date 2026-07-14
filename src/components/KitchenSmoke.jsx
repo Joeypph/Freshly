@@ -1,29 +1,64 @@
 import { useEffect } from "react";
 
-const clouds = Array.from({ length: 12 }, (_, index) => index);
+const wisps = Array.from({ length: 14 }, (_, index) => index + 1);
 
-export function KitchenSmoke({ onComplete, duration = 3200 }) {
+export function KitchenSmoke({ onComplete, duration = 4600 }) {
   useEffect(() => {
-    const timer = window.setTimeout(onComplete, duration);
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const timer = window.setTimeout(
+      () => onComplete?.(),
+      prefersReducedMotion ? 500 : duration,
+    );
+
     return () => window.clearTimeout(timer);
   }, [duration, onComplete]);
 
   return (
-    <div className="smoke-loader" role="status" aria-label="Freshly está cargando">
+    <div
+      className="smoke-loader"
+      role="status"
+      aria-label="Freshly está cargando"
+      style={{ "--smoke-total": `${duration}ms` }}
+    >
       <svg className="smoke-filters" aria-hidden="true">
-        <filter id="smoke-turbulence" x="-40%" y="-40%" width="180%" height="180%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.009 0.018" numOctaves="3" seed="7" result="noise" />
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="42" xChannelSelector="R" yChannelSelector="B" />
+        <filter
+          id="smoke-turbulence"
+          x="-60%"
+          y="-60%"
+          width="220%"
+          height="220%"
+          colorInterpolationFilters="sRGB"
+        >
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.008 0.022"
+            numOctaves="4"
+            seed="12"
+            result="noise"
+          />
+          <feDisplacementMap
+            in="SourceGraphic"
+            in2="noise"
+            scale="68"
+            xChannelSelector="R"
+            yChannelSelector="B"
+          />
         </filter>
       </svg>
+
       <div className="loader-brand">
-        <span className="loader-mark">F</span>
-        <strong>freshly.</strong>
-        <small>Horneando algo delicioso</small>
+        <span className="loader-brand__eyebrow">Recién salido del horno</span>
+        <strong>freshly</strong>
+        <span className="loader-brand__rule" aria-hidden="true" />
       </div>
-      <div className="kitchen-smoke kitchen-smoke--loader" aria-hidden="true">
-        {clouds.map((cloud) => (
-          <span key={cloud} className={`smoke-cloud smoke-cloud--${cloud + 1}`} />
+
+      <div className="smoke-atmosphere" aria-hidden="true">
+        <span className="smoke-haze smoke-haze--back" />
+        <span className="smoke-haze smoke-haze--front" />
+        {wisps.map((wisp) => (
+          <span key={wisp} className={`smoke-wisp smoke-wisp--${wisp}`} />
         ))}
       </div>
     </div>
