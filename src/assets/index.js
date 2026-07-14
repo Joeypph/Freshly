@@ -2,6 +2,7 @@ import heroPhoto from "./images/photography/hero.png";
 import foundersPhoto from "./images/photography/founders.png";
 import filomenaCard from "./images/locations/filomena.png";
 import momsCard from "./images/locations/moms-and-pops.png";
+import brandLogo from "./images/branding/freshly-logo.png";
 
 import beefIllustration from "./images/illustrations/carne.png";
 import chickenIllustration from "./images/illustrations/chickenbacon.png";
@@ -28,6 +29,7 @@ export {
   beefEmpanada,
   beefIllustration,
   boardIllustration,
+  brandLogo,
   cheeseFocaccia,
   chickenEmpanada,
   chickenIllustration,
