@@ -18,9 +18,9 @@ export default function App() {
       <Story />
       <WaveDivider from="#fffdf8" to="#f7f1e5" variant="rolling" />
       <MenuSection />
-      <WaveDivider from="#f8f1d8" to="#4e711c" variant="dramatic" flip />
+      <WaveDivider from="#f8f1d8" to="#4b8e02" variant="dramatic" flip />
       <Locations />
-      <WaveDivider from="#4e711c" to="#fffdf8" variant="gentle" />
+      <WaveDivider from="#4b8e02" to="#fffdf8" variant="gentle" />
       <Footer />
       {isLoading && <KitchenSmoke onComplete={finishLoading} duration={4600} />}
     </>
