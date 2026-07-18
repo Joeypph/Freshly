@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
+import { SectionHeader } from "../components/SectionHeader";
 import { locations } from "../data/catalog";
 import { reveal, withDelay } from "../constants/animation";
 
@@ -7,14 +8,15 @@ export function Locations() {
   return (
     <section id="puntos" className="locations">
       <div className="shell">
-        <motion.div {...reveal} className="location-title">
-          <p className="eyebrow light">Encuentra Freshly cerca de ti</p>
-          <h2>
-            Tu próximo antojo
-            <br />
-            está por <em>aquí.</em>
-          </h2>
-        </motion.div>
+        <SectionHeader
+          className="location-title"
+          eyebrow="Encuentra Freshly cerca de ti"
+          title={
+            <h2>
+              Tu próximo antojo está por <em>aquí.</em>
+            </h2>
+          }
+        />
         <div className="place-grid">
           {locations.map((location, index) => (
             <motion.a

@@ -8,7 +8,7 @@
 
 :root {
   --font-display: "Sunday Best", cursive;
-  --font-body: "Sunday Best", cursive;
+  --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --green: #4b8e02;
   --lime: #d98700;
   --ink: #452d12;
@@ -36,7 +36,10 @@ a {
   color: inherit;
   text-decoration: none;
 }
-button {
+button,
+input,
+textarea,
+select {
   font: inherit;
 }
 .shell {
@@ -437,7 +440,19 @@ em {
   display: flex;
   justify-content: space-between;
   align-items: end;
+  gap: 48px;
   margin-bottom: 70px;
+}
+.location-title .eyebrow {
+  color: var(--lime);
+  flex-shrink: 0;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  text-align: right;
+}
+.location-title h2 span {
+  display: block;
+  white-space: nowrap;
 }
 .location-title h2 em {
   color: var(--lime);
@@ -645,6 +660,12 @@ em {
   }
   .location-title {
     display: block;
+  }
+  .location-title .eyebrow {
+    justify-content: flex-start;
+    margin-top: 24px;
+    margin-bottom: 0;
+    text-align: left;
   }
   .place-grid {
     grid-template-columns: 1fr;
@@ -1949,5 +1970,22 @@ h2 {
   .hero-lead {
     font-size: 15px;
     line-height: 1.5;
+  }
+}
+
+/* Keep the locations heading on two lines without overflowing narrow screens. */
+.location-title h2 {
+  font-size: clamp(29px, 7.1vw, 84px);
+}
+
+@media (max-width: 960px) {
+  .location-title {
+    display: block;
+  }
+  .location-title .eyebrow {
+    justify-content: flex-start;
+    margin-top: 24px;
+    margin-bottom: 0;
+    text-align: left;
   }
 }
