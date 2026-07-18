@@ -1783,7 +1783,7 @@ h2 {
 }
 .hero h1 {
   max-width: min(100%, 1240px);
-  font-size: clamp(58px, 6.3vw, 92px);
+  font-size: clamp(56px, 6.3vw, 92px);
   line-height: 1.2;
   text-wrap: initial;
 }
