@@ -19,7 +19,8 @@ export function Hero() {
         </motion.p>
         <motion.h1 {...reveal} transition={withDelay(0.08)}>
           Cero complicaciones.
-          <br />
+        </motion.h1>
+        <motion.h1 {...reveal} transition={withDelay(0.08)}>
           <em>Puro sabor.</em>
         </motion.h1>
         <motion.p

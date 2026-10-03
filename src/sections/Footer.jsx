@@ -1,4 +1,3 @@
-import { Camera } from "lucide-react";
 import { Logo } from "../components/Logo";
 
 export function Footer() {
@@ -15,8 +14,27 @@ export function Footer() {
             Síguenos para sabores, fechas
             <br />y antojos recién salidos.
           </p>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer">
-            <Camera /> @freshly.mx
+          <a
+            href="https://www.instagram.com/freshly.mx?utm_source=qr"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Freshly en Instagram"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="36"
+              height="36"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+            </svg>
           </a>
         </div>
       </div>
