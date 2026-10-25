@@ -1672,9 +1672,12 @@ body {
 .emp-card:nth-child(even) .emp-product-stage .food-icon {
   transform: rotate(4deg);
 }
-.emp-card > div:not(.number):not(.emp-product-stage) {
+.emp-card__copy {
   position: relative;
   z-index: 2;
+}
+.emp-card .emp-card__copy h3 {
+  margin-bottom: 0;
 }
 .foc-product-stage {
   position: relative;
@@ -1700,25 +1703,56 @@ body {
   z-index: 1;
 }
 @media (max-width: 1024px) {
+  .emp-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    min-height: 0;
+    padding: 24px;
+  }
   .emp-product-stage {
-    inset: 8px 36px 55px 72px;
+    position: relative;
+    inset: auto;
+    justify-self: end;
+    width: calc(100% - 32px);
+    max-width: 400px;
+    height: clamp(150px, 25vw, 210px);
+  }
+  .emp-product-stage .product-board {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+  }
+  .emp-product-stage .food-icon {
+    left: 24%;
+  }
+  .emp-card .ingredient-accent {
+    width: 80px;
+    height: 90px;
+    top: 0;
+    right: -8px;
+  }
+  .emp-card__copy {
+    min-width: 0;
+    padding-right: 28px;
+  }
+  .emp-card__copy small {
+    display: block;
+  }
+  .emp-card .emp-card__copy h3 {
+    max-width: none;
   }
   .foc-product-stage {
     height: 145px;
   }
 }
 @media (max-width: 560px) {
-  .emp-product-stage {
-    inset: 5px 18px 52px 48px;
+  .emp-card {
+    padding: 20px;
   }
   .emp-product-stage .food-icon {
     width: 72%;
-    left: 14%;
-  }
-  .emp-product-stage .product-board {
-    width: 134%;
-    left: -17%;
-    bottom: -11%;
   }
   .foc-product-stage {
     height: 115px;
