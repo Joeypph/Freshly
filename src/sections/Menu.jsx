@@ -42,7 +42,7 @@ function EmpanadaCard({ item, index }) {
         <img className="food-icon" src={item.image} alt={`Empanada de ${item.name}`} />
       </div>
       <img className="ingredient-accent" src={item.accent} alt="" />
-      <div>
+      <div className="emp-card__copy">
         <small>{item.note}</small>
         <h3>{item.name}</h3>
       </div>

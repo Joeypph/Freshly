@@ -11,7 +11,7 @@ export function Story() {
           Una receta que empezó con <em>nosotros.</em>
         </h2>
         <p>
-          Somos Andreya y Jabel. Lo que comenzó en nuestra cocina como un
+          Somos Andrea y Jabel. Lo que comenzó en nuestra cocina como un
           experimento de sabor, hoy es Freshly.
         </p>
         <p>
@@ -30,7 +30,7 @@ export function Story() {
         <img
           className="story-photo"
           src={foundersPhoto}
-          alt="Jabel y Andreya, fundadores de Freshly"
+          alt="Jabel y Andrea, fundadores de Freshly"
         />
         <img className="story-line" src={empanadaOutline} alt="" />
         <img className="story-mint" src={mintIllustration} alt="" />
